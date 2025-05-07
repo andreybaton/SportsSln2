@@ -25,6 +25,12 @@ namespace SportsStore2
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddDbContext<StoreDbContext>(opts =>
+            {
+                opts.UseSqlServer(
+                    Configuration["ConnectionStrings:SportsStoreConnection"]);//aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            });
+            services.AddScoped<IStoreRepository, EFStoreRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -47,6 +53,7 @@ namespace SportsStore2
                 //    await context.Response.WriteAsync("Hello World!");
                 //});
             });
+            SeedData.EnsurePopulated(app);
         }
     }
 }
