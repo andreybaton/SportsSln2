@@ -53,6 +53,27 @@ namespace SportsStore2.Models
                         Description = "35 000-seat stadium",
                         Category = "Soccer",
                         Price = 79500
+                    },
+                    new Product
+                    {
+                        Name = "Thinking Cap",
+                        Description = "Cap for thinking",
+                        Category = "IDK",
+                        Price = 70
+                    },
+                    new Product
+                    {
+                        Name = "Unsteady chair",
+                        Description = "For naughty people",
+                        Category = "IDK",
+                        Price = 700
+                    },
+                    new Product
+                    {
+                        Name = "Chess",
+                        Description = "Chess",
+                        Category = "IDK",
+                        Price = 100
                     }
                 );
                 context.SaveChanges();
